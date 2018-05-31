@@ -1,0 +1,24 @@
+.te-navbar {
+    min-height: $te-nav-height;
+    @include media-breakpoint-up(md) {
+        @supports (position: sticky) {
+            position: sticky;
+            top: 0;
+            z-index: 1071;
+        }
+    }
+}
+
+#{$te-namespace} {
+    &.nav-side {
+        @include media-breakpoint-up(md) {
+            @supports (position: sticky) {
+                max-height: calc(100vh - 9rem);
+                overflow-y: auto;
+            }
+        } 
+        @include media-breakpoint-up(md) {
+            display: block !important;
+        }
+    }
+}

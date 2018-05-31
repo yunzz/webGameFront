@@ -1,0 +1,13 @@
+input#{$te-namespace}.bg-dark {
+    background-color: lighten(theme-color("dark"), 5) !important;
+    color: #fff;
+    border: none;
+    &:active,
+    &:focus {
+        background-color: lighten(theme-color("dark"), 10) !important;
+        color: #fff;
+        outline: none;
+        border: none;
+        box-shadow: none;
+    }
+}

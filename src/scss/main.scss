@@ -1,0 +1,133 @@
+@import "./themes/te/_theme";
+
+.te-toc {
+    @supports (position: sticky) {
+        position: sticky;
+        top: $te-nav-height;
+        height: calc(100vh - #{$te-nav-height});
+        overflow-y: auto;
+        word-wrap: break-word;
+    }
+    order: 2;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: .875rem;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.te-sidebar {
+    // order: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+
+    @include media-breakpoint-up(lg) {
+        @supports (position: sticky) {
+            position: sticky;
+            top: $te-nav-height;
+            z-index: 1000;
+            height: calc(100vh - #{$te-nav-height});
+        }
+        border-right: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    @include media-breakpoint-up(xl) {
+        // flex: 0 0 320px;
+    }
+}
+
+.te-content {
+    order: 1;
+}
+
+$ul-anchor-width:1.5rem;
+#{$te-namespace} {
+
+    &.item-anchors {
+        position: relative;
+        list-style-type: none;
+        padding-left: $ul-anchor-width;
+        &:before {
+            content: '';
+            position: absolute;
+            height: calc(100% - 1.2rem);
+            top: 0;
+            left: $ul-anchor-width;
+            border-left: 1px dashed #999999;
+        }
+        margin-bottom: 0;
+    }
+    &.item-anchor {
+        position: relative;
+        padding-left: 1rem;
+        &:before {
+            content: '';
+            position: absolute;
+            width: 0.5em;
+            left: 0;
+            top: 55%;
+            border-bottom: 1px dashed #999999;
+        }
+    }
+}
+
+
+:not(.collapsed) svg.fa-angle-right {
+    transform: rotate(90deg);
+}
+
+.collapsed svg.fa-angle-right {
+    transform: rotate(0deg);
+}
+
+// Card head line wrap
+#{$te-namespace} {
+    &.nowrap {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        p {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+}
+
+
+#chat-button {
+    display: none;
+    position: absolute;
+    right: 1.5rem;
+}
+
+// Article mouse over
+#{$te-namespace} {
+    &-art-over{
+        background-color: $gray-200;
+            box-shadow: 5px 5px 5px #888888;
+            color: $gray-700;
+            // margin-bottom: 1rem;
+    }
+}
+
+// Article mark count
+#{$te-namespace} {
+    &-mark{
+        position: absolute;
+        right: 0.5rem;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    &-ask{
+        
+    }
+    &-avatar44{
+        width:44px;
+        height:44px;
+
+    }
+}
+
+//  Login.html
+
+
